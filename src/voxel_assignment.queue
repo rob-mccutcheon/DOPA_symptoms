@@ -1,0 +1,18 @@
+#!/bin/tcsh
+
+#$ -m ae
+#$ -M example@kcl.ac.uk
+#$ -o $HOME/logs
+#$ -e $HOME/logs
+#$ -q rhe5b
+#$ -N voxel_assignment
+
+# Remember to load any modules required - default enviornment not active for queued jobs
+module load anaconda/2.7
+
+set working_data=$HOME/DOPA_symptoms/src
+set list=$HOME/DOPA_symptoms/data/subjects.list
+
+set file="`awk 'FNR==$SGE_TASK_ID' ${list}`"
+cd working_data
+python voxel_assignment.py ${file}

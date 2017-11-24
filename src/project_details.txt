@@ -1,0 +1,26 @@
+[project_details]
+main_directory = /Users/robmcc/mnt/droplet/home/k1201869/DOPA_symptoms/
+#main_directory = /home/k1201869/DOPA_symptoms/
+beta_directory =  %(main_directory)sresults/conn_analysis/conn_dopasymptoms/results/firstlevel/ANALYSIS_01/
+roi_directory = %(main_directory)sdata/rois/
+
+node_id_file = Gordon_MNI_222.xls
+striatum_file = fsl_striatum_2mm.nii
+num_networks = 13
+num_top_seeds = 25
+image_dimension: [91, 109, 91]
+
+[network_key]
+Default = 1
+SMhand = 2
+SMmouth = 3
+Visual = 4
+FrontoParietal = 5
+CinguloParietal = 6
+RetrosplenialTemporal = 7
+CingulOperc = 8
+DorsalAttn = 9
+Auditory = 10
+VentralAttn=11
+Salience = 12
+None = 13
